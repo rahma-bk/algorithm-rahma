@@ -1,0 +1,16 @@
+sum = 0
+for element in set1:
+    if element not in set2:
+        sum += element
+
+for element in set2:
+    if element not in set1:
+        sum += element
+
+return sum
+
+
+set1 = [3, 1, 7, 9]
+set2 = [2, 4, 1, 9, 3]
+result = sum_of_distinct_elements(set1, set2)
+print("Output:", result) # Output: 13 (distinct elements 4, 7, 2 )
