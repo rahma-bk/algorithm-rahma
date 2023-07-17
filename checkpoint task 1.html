@@ -1,0 +1,24 @@
+Input: sentence (string)
+Output: numWords (integer), numVowels (integer)
+
+numWords := 0  // Initialize word counter to 0
+numVowels := 0 // Initialize vowel counter to 0
+
+FOR i FROM 0 TO sentence.length-1 DO
+    currentChar := sentence[i]
+
+    // Check if the character is a vowel (assuming the sentence is in lowercase)
+    IF currentChar = 'a' OR currentChar = 'e' OR currentChar = 'i' OR currentChar = 'o' OR currentChar = 'u' THEN
+        numVowels := numVowels + 1
+    END_IF
+
+    // Check if the character is a space or the last character (point)
+    IF currentChar = ' ' OR i = sentence.length-1 THEN
+        numWords := numWords + 1
+    END_IF
+END_FOR
+
+// Since the last character is the point, we subtract one from the word count.
+numWords := numWords - 1
+
+Output: numWords, numVowels
