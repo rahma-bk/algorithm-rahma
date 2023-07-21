@@ -1,0 +1,18 @@
+ef dot_product(v1, v2):
+    """
+    Calculates the dot product of two vectors, v1 and v2.
+    Assumes v1 and v2 are lists of equal length.
+    Returns the dot product value.
+    """
+    if len(v1) != len(v2):
+        raise ValueError("Vectors must have the same length.")
+
+    return sum(x * y for x, y in zip(v1, v2))
+
+def are_vectors_orthogonal(v1, v2):
+    """
+    Determines whether two vectors, v1 and v2, are orthogonal.
+    Returns True if the dot product of v1 and v2 is zero, False otherwise.
+    """
+    dot_product_result = dot_product(v1, v2)
+    return dot_product_result == 0
